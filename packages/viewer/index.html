@@ -7,13 +7,32 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <h1>Mirror Viewer</h1>
-    <div id="controls">
-      <input id="room" type="text" value="default-room" placeholder="Room name" />
-      <button id="connectBtn">Connect</button>
+    <div id="join">
+      <h1>Mirror</h1>
+      <p>Enter a room name to start viewing</p>
+      <div id="controls">
+        <input id="room" type="text" value="default-room" placeholder="Room name" />
+        <button id="connectBtn">Connect</button>
+      </div>
     </div>
-    <div id="status"></div>
-    <div id="videos"></div>
+    <div id="viewer" class="hidden">
+      <div id="videos"></div>
+      <div id="overlay">
+        <span id="status"></span>
+        <div id="overlay-actions">
+          <button id="fullscreenBtn" title="Toggle fullscreen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+            </svg>
+          </button>
+          <button id="backBtn" title="Leave room">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

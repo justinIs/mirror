@@ -6,8 +6,8 @@ import type {
   CaptureStatus,
 } from "../lib/messages.js";
 
-const TOKEN_SERVER_URL = "http://localhost:7880";
-const SFU_URL = "ws://localhost:7881";
+const TOKEN_SERVER_URL = "http://localhost:7890";
+const SFU_URL = "ws://localhost:7880";
 const tokenProvider = new HttpTokenProvider(TOKEN_SERVER_URL);
 
 let status: CaptureStatus = { active: false };

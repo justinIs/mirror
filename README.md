@@ -32,12 +32,12 @@ This installs the `livekit-server` binary. Start it in dev mode:
 livekit-server --dev
 ```
 
-Runs on `ws://localhost:7881` with API key `devkey` and secret `secret`. No config needed.
+Runs on `ws://localhost:7880` with API key `devkey` and secret `secret`. No config needed.
 
 ### Podman
 
 ```sh
-podman run --rm -p 7881:7881 -p 7882:7882 livekit/livekit-server --dev --bind 0.0.0.0
+podman run --rm -p 7880:7880 -p 7882:7882 livekit/livekit-server --dev --bind 0.0.0.0
 ```
 
 `--bind 0.0.0.0` is required because `--dev` defaults to localhost, which is unreachable from outside the container. Port 7882 is the TCP/TURN port for WebRTC connectivity.
@@ -65,7 +65,7 @@ livekit-server --dev
 pnpm dev:server
 ```
 
-Listens on `http://localhost:7880`.
+Listens on `http://localhost:7890`.
 
 **3. Start the viewer**
 
@@ -90,7 +90,7 @@ The token server reads from the environment (defaults shown):
 ```
 LIVEKIT_API_KEY=devkey
 LIVEKIT_API_SECRET=secret
-PORT=7880
+PORT=7890
 ```
 
 Copy `.env.example` to `.env` to override.

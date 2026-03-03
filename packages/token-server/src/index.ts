@@ -7,7 +7,7 @@ const app = new Hono();
 app.use("/*", cors());
 app.route("/", tokenRoute);
 
-const port = Number(process.env.PORT) || 7880;
+const port = Number(process.env.PORT) || 7890;
 serve({ fetch: app.fetch, port }, () => {
   console.log(`Token server listening on :${port}`);
 });
