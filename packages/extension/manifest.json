@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Mirror - Screen Share",
+  "version": "0.1.0",
+  "description": "Share your screen via WebRTC through LiveKit",
+  "permissions": ["offscreen", "storage"],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  }
+}

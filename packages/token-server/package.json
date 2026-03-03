@@ -1,0 +1,21 @@
+{
+  "name": "@mirror/token-server",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup src/index.ts --format esm --clean"
+  },
+  "dependencies": {
+    "@hono/node-server": "1.19.10",
+    "@mirror/shared": "workspace:*",
+    "hono": "4.12.4",
+    "livekit-server-sdk": "2.15.0"
+  },
+  "devDependencies": {
+    "tsup": "8.5.1",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3"
+  }
+}

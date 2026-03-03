@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  },
+  "scripts": {
+    "dev:server": "pnpm --filter @mirror/token-server dev",
+    "dev:viewer": "pnpm --filter @mirror/viewer dev",
+    "dev:extension": "pnpm --filter @mirror/extension dev",
+    "build": "pnpm -r build",
+    "build:shared": "pnpm --filter @mirror/shared build",
+    "build:extension": "pnpm --filter @mirror/extension build",
+    "build:viewer": "pnpm --filter @mirror/viewer build",
+    "build:server": "pnpm --filter @mirror/token-server build"
+  }
+}

@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <h2>Mirror</h2>
+    <div id="status">Not sharing</div>
+    <div id="controls">
+      <label>Room <input id="room" type="text" value="default-room" /></label>
+      <label>Name <input id="identity" type="text" placeholder="your-name" /></label>
+      <button id="startBtn">Start Sharing</button>
+      <button id="stopBtn" disabled>Stop</button>
+    </div>
+    <script type="module" src="./popup.ts"></script>
+  </body>
+</html>
