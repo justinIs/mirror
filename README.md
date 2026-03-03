@@ -16,7 +16,31 @@ packages/
 
 - Node 24.14.0 (`nvm use`)
 - pnpm (`corepack enable`)
-- [LiveKit server](https://docs.livekit.io/home/self-hosting/local/) running locally
+- LiveKit server running locally (see below)
+
+## Installing LiveKit
+
+### Standalone binary (recommended for local dev)
+
+```sh
+curl -sSL https://get.livekit.io | bash
+```
+
+This installs the `livekit-server` binary. Start it in dev mode:
+
+```sh
+livekit-server --dev
+```
+
+Runs on `ws://localhost:7881` with API key `devkey` and secret `secret`. No config needed.
+
+### Podman
+
+```sh
+podman run --rm -p 7881:7881 -p 7882:7882 livekit/livekit-server --dev --bind 0.0.0.0
+```
+
+`--bind 0.0.0.0` is required because `--dev` defaults to localhost, which is unreachable from outside the container. Port 7882 is the TCP/TURN port for WebRTC connectivity.
 
 ## Setup
 
@@ -29,13 +53,11 @@ pnpm build
 
 ## Run
 
-**1. Start LiveKit**
+**1. Start LiveKit** (see [Installing LiveKit](#installing-livekit) above)
 
 ```sh
 livekit-server --dev
 ```
-
-This runs on `ws://localhost:7881` with API key `devkey` and secret `secret`.
 
 **2. Start the token server**
 
